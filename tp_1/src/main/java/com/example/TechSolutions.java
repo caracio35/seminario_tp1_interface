@@ -36,6 +36,8 @@ public class TechSolutions {
         empleadosEmpresa.add(desarrolador2);
         empleadosEmpresa.add(desarrolador3);
         gerenteProyectos.setEmpleados(empleadosACargo);
+        System.out.println("empleados del gerente");
+        gerenteProyectos.imprimirEmpleados();
         // System.out.println(toString(empleadosEmpresa));
         // imprimir(empleadosEmpresa);
         System.out.println("desordenado");
