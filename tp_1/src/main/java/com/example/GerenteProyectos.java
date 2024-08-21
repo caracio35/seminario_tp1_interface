@@ -25,11 +25,17 @@ public class GerenteProyectos extends Empleado {
     }
 
     public String toString() {
-        return "gerente de proyecto =" + super.toString() + " " + empleados.toString() + "\n";////////////////////////////////////
+        return "gerente de proyecto =" + super.toString() + " " + "\n";
     }
 
     @Override
     public void imprimir() {
         System.out.println(toString());
+    }
+
+    public void imprimirEmpleados() {
+        for (Empleado e : empleados) {
+            e.imprimir();
+        }
     }
 }

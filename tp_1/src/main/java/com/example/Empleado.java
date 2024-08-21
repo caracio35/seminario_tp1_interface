@@ -3,37 +3,45 @@ package com.example;
 import java.time.LocalDate;
 import java.util.ArrayList;
 
-public abstract class Empleado implements Imprimibre {
+public abstract class Empleado implements Imprimibre, Comparable<Empleado> {
+    /*
+     * AL IMPLEMENTAR LA INTERFACE EN EMPLEADO TODAS LAS SUBCLASES DE EMPLEADO DEBEN
+     * IMPLEMENTAR ESTA INTERFACE
+     */
     protected String apellido;
     protected String nombre;
     protected String legajo;
     protected String email;
-    protected LocalDate fechaDeingreso;
+    protected LocalDate fechaDeIngreso;
 
     public Empleado() {
         this.apellido = "";
         this.nombre = "";
         this.legajo = "";
         this.email = "";
-        this.fechaDeingreso = LocalDate.now();
+        this.fechaDeIngreso = LocalDate.now();
     }
 
     public Empleado(String apellido, String nombre) {
         this.apellido = apellido;
         this.nombre = nombre;
-        this.fechaDeingreso = LocalDate.now();
+        this.fechaDeIngreso = LocalDate.now();
     }
 
     public Empleado(String apellido, String nombre, String legajo) {
         this.apellido = apellido;
         this.nombre = nombre;
         this.legajo = legajo;
-        this.fechaDeingreso = LocalDate.now();
+        this.fechaDeIngreso = LocalDate.now();
     }
 
     public String toString() {
         return "Nombre: " + nombre + " Apellido: " + apellido + " Legajo: " + legajo + " Fecha de Ingreso: "
-                + fechaDeingreso + "\n";
+                + fechaDeIngreso + "\n";
+    }
+
+    public int compareTo(Empleado o) {
+        return this.nombre.compareTo(o.getNombre());
     }
 
     public void setApellido(String apellido) {
@@ -53,7 +61,7 @@ public abstract class Empleado implements Imprimibre {
     }
 
     public void setFechaDeingreso(LocalDate fechaDeingreso) {
-        this.fechaDeingreso = fechaDeingreso;
+        this.fechaDeIngreso = fechaDeingreso;
     }
 
     public String getApellido() {
@@ -73,7 +81,7 @@ public abstract class Empleado implements Imprimibre {
     }
 
     public LocalDate getFechaDeingreso() {
-        return fechaDeingreso;
+        return fechaDeIngreso;
     }
 
 }
